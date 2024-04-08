@@ -1,8 +1,31 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewBag.Title = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome to Trading Performance Review application </h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="jumbotron">
+    <h1>Trading Performance Review</h1>
+    <p>Welcome to your Trading Performance Review Dashboard.</p>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Performance Summary</h2>
+            <p>Here you can see a summary of your trading performance.</p>
+            <!-- Example of summarizing performance -->
+            <ul>
+                <li>Total Trades: @ViewBag.TotalTrades</li>
+                <li>Profitable Trades: @ViewBag.ProfitableTrades</li>
+                <li>Loss Trades: @ViewBag.LossTrades</li>
+                <li>Profit Percentage: @ViewBag.ProfitPercentage%</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <h2>Actions</h2>
+            <p>Select an action below to dive deeper into your trading analysis.</p>
+            <ul>
+                <li><a href="@Url.Action("Index", "Traders")">List of users</a></li>
+            </ul>
+        </div>
+    </div>
 </div>
